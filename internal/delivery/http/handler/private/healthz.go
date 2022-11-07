@@ -1,7 +1,7 @@
 package private
 
 import (
-	"github.com/goflink/rider-workforce-common/pubsub"
+	"go-structure-demo/internal/pubsub"
 	"go-structure-demo/internal/repository/postgresrepo"
 	"go-structure-demo/internal/repository/redisrepo"
 	"net/http"

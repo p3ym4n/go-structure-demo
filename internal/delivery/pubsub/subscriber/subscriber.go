@@ -2,10 +2,10 @@ package subscriber
 
 import (
 	"context"
-	"github.com/goflink/rider-workforce-common/log"
-	"github.com/goflink/rider-workforce-common/pubsub"
 	"go-structure-demo/internal/config"
 	v1 "go-structure-demo/internal/delivery/pubsub/handler/v1"
+	"go-structure-demo/internal/log"
+	"go-structure-demo/internal/pubsub"
 	"go-structure-demo/internal/repository/postgresrepo"
 	"go-structure-demo/internal/repository/redisrepo"
 )

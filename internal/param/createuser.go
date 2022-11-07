@@ -1,7 +1,7 @@
 package param
 
 import (
-	"github.com/goflink/events/go/hrpb"
+	v1 "go-structure-demo/internal/delivery/pubsub/handler/v1"
 	"go-structure-demo/internal/entity"
 	"net/http"
 )
@@ -18,7 +18,7 @@ func (r *CreateUserRequest) BindFromChi(ctx *http.Request) error {
 	return nil
 }
 
-func (r *CreateUserRequest) BindFromPubSub(event *hrpb.Auth0IdentityCreated) error {
+func (r *CreateUserRequest) BindFromPubSub(event *v1.UserCreatedEvent) error {
 	return nil
 }
 

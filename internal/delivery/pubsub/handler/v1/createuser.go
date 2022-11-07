@@ -2,13 +2,11 @@ package v1
 
 import (
 	"context"
-	"github.com/goflink/events/go/hrpb"
-	"github.com/goflink/rider-workforce-common/log"
-	"github.com/goflink/rider-workforce-common/pubsub"
-	"github.com/golang/protobuf/proto"
 	"go-structure-demo/internal/config"
 	"go-structure-demo/internal/controller"
+	"go-structure-demo/internal/log"
 	"go-structure-demo/internal/param"
+	"go-structure-demo/internal/pubsub"
 	"go-structure-demo/internal/repository/postgresrepo"
 	"go-structure-demo/internal/repository/redisrepo"
 	"go-structure-demo/internal/validator"
@@ -16,8 +14,10 @@ import (
 
 func CreateUser(cfg *config.Config, logger log.Logger, redisRepo *redisrepo.RedisRepo, postgresRepo *postgresrepo.PostgresRepo) pubsub.MessageHandler {
 	return func(ctx context.Context, bytes []byte) (bool, error) {
-		event := new(hrpb.Auth0IdentityCreated)
-		err := proto.Unmarshal(bytes, event)
+		event := new(UserCreatedEvent)
+
+		// un marshall the event
+		err := unmarshalPubSubEvent(bytes, event)
 		if err != nil {
 			return true, nil
 		}
@@ -40,4 +40,15 @@ func CreateUser(cfg *config.Config, logger log.Logger, redisRepo *redisrepo.Redi
 
 		return true, nil
 	}
+}
+
+type UserCreatedEvent struct {
+	Email     string `json:"email,omitempty"`
+	FirstName string `json:"first_name,omitempty"`
+	LastName  string `json:"last_name,omitempty"`
+	Phone     string `json:"phone,omitempty"`
+}
+
+func unmarshalPubSubEvent([]byte, *UserCreatedEvent) error {
+	return nil
 }

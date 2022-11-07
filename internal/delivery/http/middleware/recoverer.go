@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/goflink/rider-workforce-common/log"
+	"go-structure-demo/internal/log"
 )
 
 func Recoverer(logger log.Logger) func(http.Handler) http.Handler {

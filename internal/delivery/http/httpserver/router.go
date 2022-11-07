@@ -2,9 +2,9 @@ package httpserver
 
 import (
 	"github.com/go-chi/chi/v5"
-	"github.com/goflink/rider-workforce-common/log"
 	"go-structure-demo/internal/config"
 	"go-structure-demo/internal/delivery/http/middleware"
+	"go-structure-demo/internal/log"
 	"net/http"
 )
 

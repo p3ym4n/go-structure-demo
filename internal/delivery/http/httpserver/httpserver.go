@@ -3,11 +3,11 @@ package httpserver
 import (
 	"context"
 	"fmt"
-	"github.com/goflink/rider-workforce-common/log"
-	"github.com/goflink/rider-workforce-common/pubsub"
 	"go-structure-demo/internal/config"
 	"go-structure-demo/internal/delivery/http/handler/private"
 	v1 "go-structure-demo/internal/delivery/http/handler/v1"
+	"go-structure-demo/internal/log"
+	"go-structure-demo/internal/pubsub"
 	"go-structure-demo/internal/repository/postgresrepo"
 	"go-structure-demo/internal/repository/redisrepo"
 	"net/http"

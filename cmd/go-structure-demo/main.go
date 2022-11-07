@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"github.com/goflink/rider-workforce-common/log"
-	"github.com/goflink/rider-workforce-common/pubsub"
 	"go-structure-demo/internal/config"
 	"go-structure-demo/internal/delivery/http/httpserver"
 	"go-structure-demo/internal/delivery/pubsub/subscriber"
+	"go-structure-demo/internal/log"
+	"go-structure-demo/internal/pubsub"
 	"go-structure-demo/internal/repository/postgresrepo"
 	"go-structure-demo/internal/repository/redisrepo"
 	"os"
